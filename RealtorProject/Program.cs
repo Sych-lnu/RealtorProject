@@ -151,7 +151,7 @@ namespace RealtorProject
             int id = int.Parse(Console.ReadLine());
             Console.WriteLine("enter new client name:");
             string name = Console.ReadLine();
-            using (var cmd = new NpgsqlCommand("UPDATE clients SET (client_name) = ($1) WHERE (client_id) = ($2)", conn))
+            using (var cmd = new NpgsqlCommand("UPDATE clients SET client_name = ($1) WHERE client_id = ($2)", conn))
             {
                 cmd.Parameters.AddWithValue(name);
                 cmd.Parameters.AddWithValue(id);
